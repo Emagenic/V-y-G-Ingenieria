@@ -1,0 +1,30 @@
+@charset "UTF-8";
+::selection {
+	color: white;
+	background-color: #E5301E;
+}
+.clear { clear: both; }
+#section {
+	background-image: url(../imagenes/bg.jpg);
+	min-height: 335px;
+	width: 100%;
+}
+.clear { clear: both; }
+#section2 {
+	background-image: url(../imagenes/bg2.jpg);
+	min-height: 270px;
+	width: 100%;
+}
+footer {
+	background-image:url(../imagenes/footer.jpg);
+	height:200px;
+	width:100%;
+}
+.botonera {
+	font-family: 'bebas_neueregular' Arial, Helvetica;
+	font-size: 21px;
+	color: #FFF;
+	text-decoration: none;
+	letter-spacing: 2px;
+	text-align: center;
+}
