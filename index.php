@@ -122,8 +122,8 @@
         	<div id="twitter"></div>
             <div id="facebook"></div>
       </div>
-      		<div class="texto_pie" id="pie">todos los derechos reservados a ingenieriavyg<br>
-   		    sitio web desarrollado por emagenic.cl</div>
+      		<div class="texto_pie" id="pie">todos los derechos reservados a ingenieriavyg -  contacto@ingenieriavyg.cl<br>
+sitio web desarrollado por emagenic.cl</div>
 	  </div>
 </footer>
 </body>

@@ -5,31 +5,31 @@ var slideshowSpeed = 6000;
 // which also includes some text and url's.
 var photos = [ {
 		"title" : "Stairs",
-		"image" : "1.jpg",
+		"image" : "4.jpg",
 		"url" : "http://www.sxc.hu/photo/1271909",
 		"firstline" : "Going on",
 		"secondline" : "vacation?"
 	}, {
 		"title" : "Office Appartments",
-		"image" : "2.jpg",
+		"image" : "5.jpg",
 		"url" : "http://www.sxc.hu/photo/1265695",
 		"firstline" : "Or still busy at",
 		"secondline" : "work?"
 	}, {
 		"title" : "Mountainbiking",
-		"image" : "3.jpg",
+		"image" : "1.jpg",
 		"url" : "http://www.sxc.hu/photo/1221065",
 		"firstline" : "Get out and be",
 		"secondline" : "active"
 	}, {
 		"title" : "Mountains Landscape",
-		"image" : "4.jpg",
+		"image" : "2.jpg",
 		"url" : "http://www.sxc.hu/photo/1271915",
 		"firstline" : "Take a fresh breath of",
 		"secondline" : "nature"
 	}, {
 		"title" : "Mountains Landscape",
-		"image" : "5.jpg",
+		"image" : "3.jpg",
 		"url" : "http://www.sxc.hu/photo/1271915",
 		"firstline" : "Take a fresh breath of",
 		"secondline" : "nature"

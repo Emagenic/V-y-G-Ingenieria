@@ -7,7 +7,7 @@
 <link href="font/stylesheet.css" rel="stylesheet" type="text/css">
 <link rel="shortcut icon" href="imagenes/icon.png">
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js"></script>
-<script type="text/javascript" src="js/script.js"></script>
+<script type="text/javascript" src="js/script4.js"></script>
 </head>
 <body>
 <div id="linea_sup"></div>
@@ -40,8 +40,11 @@
 	              <td height="84" valign="top">
 	                <iframe width="640" height="360" src="//www.youtube.com/embed/mHJjrf-eXDY?rel=0" frameborder="0" allowfullscreen></iframe>
 	                
-	                &nbsp;
-	                </td>
+	                <p>&nbsp;
+	                  &nbsp;
+	                  &nbsp;
+                    </p>
+	                <p>&nbsp;</p></td>
 	              </tr>
               </table></td>
 	          <td width="30%" valign="top" class="texto_contenido"><table width="100%" border="0" cellspacing="0" cellpadding="0">
@@ -116,8 +119,8 @@
         	<div id="twitter"></div>
             <div id="facebook"></div>
       </div>
-      		<div class="texto_pie" id="pie">todos los derechos reservados a ingenieriavyg<br>
-   		    sitio web desarrollado por emagenic.cl</div>
+      		<div class="texto_pie" id="pie">todos los derechos reservados a ingenieriavyg -  contacto@ingenieriavyg.cl<br>
+sitio web desarrollado por emagenic.cl</div>
 	  </div>
 </footer>
 </body>

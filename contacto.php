@@ -1,3 +1,28 @@
+<?php include("Conexion.php"); 
+if ($_POST["Enviar"]){
+	include_once("securimage/securimage.php");
+	$img = new securimage();
+	$valido_captcha = $img->check($_POST['captchacode']);
+if ($valido_captcha){
+	$destinatario = "contacto@ingenieriavyg.cl";
+	$nombre = $_POST["Nombre"];
+	$telefono = $_POST["Telefono"];
+	$mail = $_POST["Email"];
+	$consulta = $_POST["Consulta"];
+	$asunto = "Consulta sitio web"; 
+	$cuerpo = "<table width=100% border=1 cellspacing=0 cellpadding=0><tr><td>NOMBRE: $nombre</td></tr><tr><td>TELEFONO: $telefono</td></tr><tr><td>MAIL: $mail</td></tr><tr><td>CONSULTA: $consulta</td></tr></table>";
+	$headers = "MIME-Version: 1.0\r\n"; 
+	$headers .= "Content-type: text/html; charset=iso-8859-1\r\n"; 
+	$headers .= "From: $nombre <$mail>\r\n"; 
+	mail($destinatario,$asunto,$cuerpo,$headers);
+	header("location: postconsulta.php","_self");
+}else{
+   echo "Consulta no enviada, debe escribir correctamente el codigo de seguridad";
+}
+
+}
+
+?>
 <!doctype html><html>
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1"/>
@@ -7,7 +32,7 @@
 <link href="font/stylesheet.css" rel="stylesheet" type="text/css">
 <link rel="shortcut icon" href="imagenes/icon.png">
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js"></script>
-<script type="text/javascript" src="js/script.js"></script>
+<script type="text/javascript" src="js/script5.js"></script>
 </head>
 <body>
 <div id="linea_sup"></div>
@@ -129,8 +154,8 @@
         	<div id="twitter"></div>
             <div id="facebook"></div>
       </div>
-      		<div class="texto_pie" id="pie">todos los derechos reservados a ingenieriavyg<br>
-   		    sitio web desarrollado por emagenic.cl</div>
+      		<div class="texto_pie" id="pie">todos los derechos reservados a ingenieriavyg -  contacto@ingenieriavyg.cl<br>
+sitio web desarrollado por emagenic.cl</div>
 	  </div>
 </footer>
 </body>

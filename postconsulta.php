@@ -7,7 +7,7 @@
 <link href="font/stylesheet.css" rel="stylesheet" type="text/css">
 <link rel="shortcut icon" href="imagenes/icon.png">
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js"></script>
-<script type="text/javascript" src="js/script.js"></script>
+<script type="text/javascript" src="js/script5.js"></script>
 </head>
 <body>
 <div id="linea_sup"></div>
@@ -69,8 +69,8 @@
         	<div id="twitter"></div>
             <div id="facebook"></div>
       </div>
-      		<div class="texto_pie" id="pie">todos los derechos reservados a ingenieriavyg<br>
-   		    sitio web desarrollado por emagenic.cl</div>
+      		<div class="texto_pie" id="pie">todos los derechos reservados a ingenieriavyg -  contacto@ingenieriavyg.cl<br>
+sitio web desarrollado por emagenic.cll</div>
 	  </div>
 </footer>
 </body>
