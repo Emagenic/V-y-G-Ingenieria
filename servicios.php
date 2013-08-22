@@ -51,17 +51,16 @@ while($rs=mysql_fetch_array($sentencia,$mibase)){
 	        <?php
 		$listado = "select * from servicios  ";
 			$sentencia = mysql_query($listado,$conn);
-			while($rs=mysql_fetch_array($sentencia,$mibase)){
-		?> <tr>
+			while($rs=mysql_fetch_array($sentencia,$mibase)){?> <tr>
 	          <td width="475" valign="top"><table width="475" border="0" cellspacing="0" cellpadding="0">
 	            <tr>
 	              <td height="84" valign="top"><img src="imagenes/servicios/<?php echo $rs["id"]; ?>.jpg" width="418" height="114" /></td>
-	              <td width="7%">&nbsp;</td>
-	              <td width="1%" bgcolor="#E7301D">&nbsp;</td>
-	              <td width="4%">&nbsp;</td>
+	              <td width="27">&nbsp;</td>
+	              <td width="4" bgcolor="#E7301D">&nbsp;</td>
+	              <td width="26">&nbsp;</td>
 	              </tr>
 	            <tr>
-	              <td width="88%" height="84" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+	              <td width="418" height="84" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 	                <tr>
 	                  <td>&nbsp;</td>
 	                  </tr>
@@ -77,16 +76,16 @@ while($rs=mysql_fetch_array($sentencia,$mibase)){
 	              <td colspan="3">&nbsp;</td>
 	              </tr>
               </table></td>
-              <?php if($rs=mysql_fetch_array($sentencia,$mibase)){ ?>
+             <?php if($rs=mysql_fetch_array($sentencia,$mibase)){ ?>
 	          <td width="475" valign="top"><table width="475" border="0" cellspacing="0" cellpadding="0">
 	            <tr>
 	              <td height="84" valign="top"><img src="imagenes/servicios/<?php echo $rs["id"]; ?>.jpg" width="418" height="114" /></td>
-	              <td width="7%">&nbsp;</td>
-	              <td width="1%" bgcolor="#E7301D">&nbsp;</td>
-	              <td width="4%">&nbsp;</td>
+	              <td width="27">&nbsp;</td>
+	              <td width="4" bgcolor="#E7301D">&nbsp;</td>
+	              <td width="26">&nbsp;</td>
 	              </tr>
 	            <tr>
-	              <td width="88%" height="84" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+	              <td width="418" height="84" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 	                <tr>
 	                  <td>&nbsp;</td>
 	                  </tr>

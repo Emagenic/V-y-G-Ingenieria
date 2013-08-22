@@ -100,10 +100,10 @@ if($_POST["Entrar"]){
           <td height="15" align="left" bgcolor="#FFFFFF"  class="texto">&nbsp;<a href="servicios.php" class="texto_contenido2">Servicios</a></td>
         </tr>
         <tr>
-          <td height="15" align="left" bgcolor="#FFFFFF"><span class="texto">&nbsp;<a href="servicios.php" class="texto_contenido2">Proyectos</a></span></td>
+          <td height="15" align="left" bgcolor="#FFFFFF"><span class="texto">&nbsp;<a href="proyectos.php" class="texto_contenido2">Proyectos</a></span></td>
         </tr>
         <tr>
-          <td height="15" align="left" bgcolor="#FFFFFF"  class="texto">&nbsp;<a href="servicios.php" class="texto_contenido2">Responsabilidad Social</a></td>
+          <td height="15" align="left" bgcolor="#FFFFFF"  class="texto">&nbsp;<a href="responsabilidad.php" class="texto_contenido2">Responsabilidad Social</a></td>
         </tr>
         <tr>
           <td height="7" align="left" bgcolor="#FFFFFF"  class="texto">&nbsp;<a href="post.php" class="texto_contenido2">Post Consulta</a></td>

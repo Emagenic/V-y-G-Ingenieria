@@ -2,12 +2,11 @@
 session_start();
 include("../Conexion.php");
 	if ($_GET["action"]=="eliminar"){
-		$insertar = "delete from servicios WHERE id  = '$_GET[id]' " ; 
+		$insertar = "delete from responsabilidad WHERE id  = '$_GET[id]' " ; 
 		$sentencia=mysql_query($insertar,$conn)or die("Error al eliminar un link: ".mysql_error);
 	}
 	
-
- ?>
+?>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
@@ -101,7 +100,7 @@ body,td,th {
     <link rel="shortcut icon" href="../imagenes/icon.png">
     <link href="../css/style.css" rel="stylesheet" type="text/css" />
 
-<title>servicios</title></head>
+<title>responsabilidad</title></head>
 
 <body>
 <div align="center">
@@ -109,25 +108,24 @@ body,td,th {
     <?php 
 if ($_POST["Grabar"]){
 	
-		$insertar="INSERT INTO servicios (titulo,descripcion ) ";
-		$insertar.= "VALUES( '$_POST[titulo]','$_POST[descripcion]' )";
+		$insertar="INSERT INTO responsabilidad (links ) ";
+		$insertar.= "VALUES( '$_POST[links]' )";
 		$sentencia=mysql_query($insertar,$conn)or die("Error al grabar: ".mysql_error);	
 }
 
-?>
-    
+?>  
 </p>
-<form action="servicios.php" method="post" name="form1" id="form1" onSubmit="MM_validateForm('codigo','','R','nombre','','R','preciolista','','RisNum','preciomayorista','','RisNum','descripcion','','R');return document.MM_returnValue">
+<form action="responsabilidad.php" method="post" name="form1" id="form1" onSubmit="MM_validateForm('codigo','','R','nombre','','R','preciolista','','RisNum','preciomayorista','','RisNum','descripcion','','R');return document.MM_returnValue">
   <table width="70%" border="0" align="center" cellpadding="0" cellspacing="0">
     <tr>
       <td height="32" colspan="2"><div align="center" class="Subtitulo1">
-        <h2><span class="texto_contenido2">Responzabilidad</span></h2>
+        <h2><span class="texto_contenido2">Responsabilidad</span></h2>
       </div></td>
     </tr>
     <tr>
       <td width="44%" height="29" align="right" class="texto_info"><span class="texto_contenido2">url</span><strong class="texto"> &nbsp;</strong></td>
-      <td width="56%"><label for="titulo"></label>
-        <input name="titulo" type="text" class="borde" id="titulo"></td>
+      <td width="56%"><label for="links"></label>
+        <input name="links" type="text" class="borde" id="links"></td>
     </tr>
     <tr>
       <td colspan="2" valign="top" class="Letras1">&nbsp;</td>
@@ -149,7 +147,7 @@ if ($_POST["Grabar"]){
 <p>&nbsp;</p>
 <p>
   <?php 
-$listado = "select * from  servicios";
+$listado = "select * from  responsabilidad";
 $sentencia = mysql_query($listado,$conn);
 while($rs=mysql_fetch_array($sentencia,$mibase)){
 ?>
@@ -161,12 +159,12 @@ while($rs=mysql_fetch_array($sentencia,$mibase)){
                 <tr>
                   <td width="88%" valign="top"><table width="81%" border="0" align="center" cellpadding="0" cellspacing="0">
                     <tr>
-                      <td width="133" height="28" class="Letras1"><div align="left" class="Letras1"> <span class="textobox"><a href="servicios.php?id=<?php echo $rs["id"] ?>&action=eliminar" onClick=" return confirm('¿Está Seguro que desea eliminar?');"><img src="b_drop.png" width="16" height="16" border="0" /></a></span> <span class="texto_f">&nbsp;</span><span class="texto_contenido2">Eliminar</span>                      </div></td>
-                      <td class="textobox"><a href="javascript:openWindow('editarservicios.php?id=<?php echo $rs["id"]; ?>')"javascript:openWindow('editarservicios.php?id=<?php echo $rs["id"]; ?>')""><img src="Lapiz.png" width="16" height="16" border="0"></a>  &nbsp;<span class="texto_contenido2"><a href="javascript:openWindow('editarservicios.php?id=<?php echo $rs["id"]; ?>')" class="texto_contenido2">Editar</a></a></span></td>
+                      <td width="133" height="28" class="Letras1"><div align="left" class="Letras1"> <span class="textobox"><a href="responsabilidad.php?id=<?php echo $rs["id"] ?>&action=eliminar" onClick=" return confirm('¿Está Seguro que desea eliminar?');"><img src="b_drop.png" width="16" height="16" border="0" /></a></span> <span class="texto_f">&nbsp;</span><span class="texto_contenido2">Eliminar</span>                      </div></td>
+                      <td class="textobox">&nbsp;</td>
                     </tr>
                     <tr>
                       <td height="26" align="right" valign="top" class="Letras1"><p><span class="texto_info"><span class="texto_contenido2">url</span> &nbsp; </span></p></td>
-                      <td width="369" valign="top" class="texto"><?php $texto = str_replace("\r\n","<br>",$rs["titulo"]); echo $texto ?></td>
+                      <td width="369" valign="top" class="texto"><?php $texto = str_replace("\r\n","<br>",$rs["links"]); echo $texto ?></td>
                     </tr>
                     <tr>
                       <td colspan="2" align="center" valign="top" class="Letras1"><p>&nbsp;</p></td>
