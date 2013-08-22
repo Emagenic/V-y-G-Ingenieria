@@ -1,3 +1,14 @@
+<?php include("Conexion.php"); 
+$listado = "select * from  destacados";
+$sentencia = mysql_query($listado,$conn);
+while($rs=mysql_fetch_array($sentencia,$mibase)){
+	$destacado1 = str_replace("\r\n","<br>",$rs["destacado1"]);
+	$contenido1 = str_replace("\r\n","<br>",$rs["contenido1"]);
+	$destacado2 = str_replace("\r\n","<br>",$rs["destacado2"]);
+	$contenido2 = str_replace("\r\n","<br>",$rs["contenido2"]);	
+}
+
+?>
 <!doctype html><html>
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1"/>
@@ -28,19 +39,26 @@
 </header>
 <div id="section"> 
 	<div id="contenido_section">
+    
+    
 	  <table width="950" border="0" cellspacing="0" cellpadding="0">
-	    <tr>
-	      <td height="55">&nbsp;</td>
+            
+        <tr>
+	          <td height="55">&nbsp;</td>
         </tr>
-	    <tr>
-	      <td height="18" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
-	        <tr>
-	          <td width="50%" height="80" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+	      <td><table width="950" border="0" cellspacing="0" cellpadding="0">
+	        <?php
+		$listado = "select * from servicios  ";
+			$sentencia = mysql_query($listado,$conn);
+			while($rs=mysql_fetch_array($sentencia,$mibase)){
+		?> <tr>
+	          <td width="475" valign="top"><table width="475" border="0" cellspacing="0" cellpadding="0">
 	            <tr>
-	              <td height="84" valign="top"><img src="imagenes/servicios/1.jpg" width="418" height="114"></td>
-	              <td>&nbsp;</td>
-	              <td bgcolor="#E7301D">&nbsp;</td>
-	              <td>&nbsp;</td>
+	              <td height="84" valign="top"><img src="imagenes/servicios/<?php echo $rs["id"]; ?>.jpg" width="418" height="114" /></td>
+	              <td width="7%">&nbsp;</td>
+	              <td width="1%" bgcolor="#E7301D">&nbsp;</td>
+	              <td width="4%">&nbsp;</td>
 	              </tr>
 	            <tr>
 	              <td width="88%" height="84" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
@@ -48,23 +66,24 @@
 	                  <td>&nbsp;</td>
 	                  </tr>
 	                <tr>
-	                  <td height="35" valign="top"><h1>Ingenier&iacute;a</h1></td>
+	                  <td height="35" valign="top"><h1><?php echo str_replace("\r\n","<br>",$rs["titulo"]) ?></h1></td>
 	                  </tr>
 	                <tr>
-	                  <td valign="top" class="texto_contenido">Planificacion y control de proyectos, estudios de eficiencia energetica, riego tecnificado, inspecciones tecnicas procesos de  produccion carros de ferrocarriles de carga, montaje riego tecnificado, manuales inteligentes de mantenimiento.</td>
+	                  <td valign="top" class="texto_contenido"><?php echo str_replace("\r\n","<br>",$rs["descripcion"]) ?>
+	                    <p>&nbsp;</p>
+	                    <p>&nbsp;</p></td>
 	                  </tr>
 	                </table></td>
-	              <td width="7%">&nbsp;</td>
-	              <td width="1%">&nbsp;</td>
-	              <td width="4%">&nbsp;</td>
+	              <td colspan="3">&nbsp;</td>
 	              </tr>
               </table></td>
-	          <td width="50%" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <?php if($rs=mysql_fetch_array($sentencia,$mibase)){ ?>
+	          <td width="475" valign="top"><table width="475" border="0" cellspacing="0" cellpadding="0">
 	            <tr>
-	              <td height="84" valign="top"><img src="imagenes/servicios/2.jpg" width="418" height="114"></td>
-	              <td>&nbsp;</td>
-	              <td bgcolor="#E7301D">&nbsp;</td>
-	              <td>&nbsp;</td>
+	              <td height="84" valign="top"><img src="imagenes/servicios/<?php echo $rs["id"]; ?>.jpg" width="418" height="114" /></td>
+	              <td width="7%">&nbsp;</td>
+	              <td width="1%" bgcolor="#E7301D">&nbsp;</td>
+	              <td width="4%">&nbsp;</td>
 	              </tr>
 	            <tr>
 	              <td width="88%" height="84" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
@@ -72,23 +91,25 @@
 	                  <td>&nbsp;</td>
 	                  </tr>
 	                <tr>
-	                  <td height="35" valign="top"><h1>Construcci&oacute;n</h1></td>
+	                  <td height="35" valign="top"><h1><?php echo str_replace("\r\n","<br>",$rs["titulo"]) ?></h1></td>
 	                  </tr>
 	                <tr>
-	                  <td valign="top" class="texto_contenido">Obras civiles, desarrollo y ejecucion proyectos arquitectura, <br>
-	                    reconstruccion patrimonial, desarrollo y ejecucion de proyectos <br>
-	                    para vivienda  ( proyectos particulare ).</td>
+	                  <td valign="top" class="texto_contenido"><?php echo str_replace("\r\n","<br>",$rs["descripcion"]) ?>
+	                    <p>&nbsp;</p>
+	                    <p>&nbsp;</p></td>
 	                  </tr>
 	                </table></td>
-	              <td width="7%">&nbsp;</td>
-	              <td width="1%">&nbsp;</td>
-	              <td width="4%">&nbsp;</td>
+	              <td colspan="3">&nbsp;</td>
 	              </tr>
               </table></td>
             </tr>
           </table></td>
         </tr>
+	    <?php }}?>
       </table>
+      
+      
+     
 	</div>
 </div>
 <div id="section2"> 
@@ -102,12 +123,10 @@
 	        <tr>
 	          <td width="50%" height="91" valign="top"><table width="90%" border="0" cellspacing="0" cellpadding="0">
 	            <tr>
-	              <td height="35" valign="top"><h2>Servicios</h2></td>
+	              <td height="35" valign="top"><h2><?php echo $destacado1; ?></h2></td>
 	              </tr>
 	            <tr>
-	              <td valign="top" class="texto_contenido2">is simply dummy text of the printing and typesetting industry.<br>
-	                Lorem Ipsum has been the industry's standard dummy text <br>
-	                ever since the 1500s</td>
+	              <td valign="top" class="texto_contenido2"><?php echo $contenido1; ?></td>
 	              </tr>
 	            <tr>
 	              <td height="29" valign="bottom"><table width="20%" border="0" cellspacing="0" cellpadding="0">
@@ -116,15 +135,13 @@
 	                  </tr>
 	                </table></td>
 	              </tr>
-              </table></td>
+	            </table></td>
 	          <td width="50%" valign="top"><table width="90%" border="0" cellspacing="0" cellpadding="0">
 	            <tr>
-	              <td height="35" valign="top"><h2>Productos</h2></td>
+	              <td height="35" valign="top"><h2><?php echo $destacado2; ?></h2></td>
 	              </tr>
 	            <tr>
-	              <td valign="top" class="texto_contenido2">is simply dummy text of the printing and typesetting industry.<br>
-	                Lorem Ipsum has been the industry's standard dummy text <br>
-	                ever since the 1500s</td>
+	              <td valign="top" class="texto_contenido2"><?php echo $contenido2; ?></td>
 	              </tr>
 	            <tr>
 	              <td height="29" valign="bottom"><table width="20%" border="0" cellspacing="0" cellpadding="0">
@@ -133,7 +150,7 @@
 	                  </tr>
 	                </table></td>
 	              </tr>
-              </table></td>
+	            </table></td>
             </tr>
           </table></td>
         </tr>

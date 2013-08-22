@@ -1,3 +1,24 @@
+<?php include("Conexion.php"); 
+$listado = "select * from  nosotros";
+$sentencia = mysql_query($listado,$conn);
+while($rs=mysql_fetch_array($sentencia,$mibase)){
+	$titulo1 = str_replace("\r\n","<br>",$rs["titulo1"]);
+	$descripcion1 = str_replace("\r\n","<br>",$rs["descripcion1"]);
+	$titulo2 = str_replace("\r\n","<br>",$rs["titulo2"]);
+	$descripcion2 = str_replace("\r\n","<br>",$rs["descripcion2"]);
+	
+}
+
+$listado = "select * from  destacados";
+$sentencia = mysql_query($listado,$conn);
+while($rs=mysql_fetch_array($sentencia,$mibase)){
+	$destacado1 = str_replace("\r\n","<br>",$rs["destacado1"]);
+	$contenido1 = str_replace("\r\n","<br>",$rs["contenido1"]);
+	$destacado2 = str_replace("\r\n","<br>",$rs["destacado2"]);
+	$contenido2 = str_replace("\r\n","<br>",$rs["contenido2"]);	
+}
+
+?>
 <!doctype html><html>
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1"/>
@@ -41,23 +62,19 @@
 	          <td width="20">&nbsp;</td>
 	          <td width="620" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 	            <tr>
-	              <td height="35" valign="top"><h1>Quienes Somos</h1></td>
+	              <td height="35" valign="top"><h1><?php echo $titulo1; ?></h1></td>
 	              </tr>
 	            <tr>
-	              <td valign="top" class="texto_contenido">Empresa joven de calidad, confiable y por sobre todo profesional. Trabajamos como consultores <br>
-	                de ingenier&iacute;a y en proyectos de construcci&oacute;n entregando lo mejor de cada uno de los que <br>
-	                componen el equipo para otorgar un producto o soluciones serias y responsables. </td>
+	              <td valign="top" class="texto_contenido"><?php echo $descripcion1; ?></td>
 	              </tr>
 	            <tr>
 	              <td>&nbsp;</td>
 	              </tr>
 	            <tr>
-	              <td width="35" height="34" valign="top"><h1>Nuestra misi&oacute;n en la gesti&oacute;n </h1></td>
+	              <td width="35" height="34" valign="top"><h1><?php echo $titulo2; ?></h1></td>
 	              </tr>
 	            <tr>
-	              <td valign="top" class="texto_contenido">Nuestros proyectos es posicionarnos en el mercado y ser la alternativa para desarrollar sus<br>
-	                proyectos , asumimos el compromiso de cumplir las expectativas en nuestras &aacute;reas de desarrollo <br>
-	                profesional siendo la mejor opci&oacute;n para llevar a cabo sus planes.</td>
+	              <td valign="top" class="texto_contenido"><?php echo $descripcion2; ?></td>
 	              </tr>
               </table></td>
             </tr>
@@ -77,12 +94,10 @@
 	        <tr>
 	          <td width="50%" height="91" valign="top"><table width="90%" border="0" cellspacing="0" cellpadding="0">
 	            <tr>
-	              <td height="35" valign="top"><h2>Servicios</h2></td>
+	              <td height="35" valign="top"><h2><?php echo $destacado1; ?></h2></td>
 	              </tr>
 	            <tr>
-	              <td valign="top" class="texto_contenido2">is simply dummy text of the printing and typesetting industry.<br>
-	                Lorem Ipsum has been the industry's standard dummy text <br>
-	                ever since the 1500s</td>
+	              <td valign="top" class="texto_contenido2"><?php echo $contenido1; ?></td>
 	              </tr>
 	            <tr>
 	              <td height="29" valign="bottom"><table width="20%" border="0" cellspacing="0" cellpadding="0">
@@ -94,12 +109,10 @@
               </table></td>
 	          <td width="50%" valign="top"><table width="90%" border="0" cellspacing="0" cellpadding="0">
 	            <tr>
-	              <td height="35" valign="top"><h2>Productos</h2></td>
+	              <td height="35" valign="top"><h2><?php echo $destacado2; ?></h2></td>
 	              </tr>
 	            <tr>
-	              <td valign="top" class="texto_contenido2">is simply dummy text of the printing and typesetting industry.<br>
-	                Lorem Ipsum has been the industry's standard dummy text <br>
-	                ever since the 1500s</td>
+	              <td valign="top" class="texto_contenido2"><?php echo $contenido2; ?></td>
 	              </tr>
 	            <tr>
 	              <td height="29" valign="bottom"><table width="20%" border="0" cellspacing="0" cellpadding="0">

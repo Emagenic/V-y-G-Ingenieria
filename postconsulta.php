@@ -1,3 +1,13 @@
+<?php include("Conexion.php"); 
+$listado = "select * from  post";
+$sentencia = mysql_query($listado,$conn);
+while($rs=mysql_fetch_array($sentencia,$mibase)){
+	$descripcion = str_replace("\r\n","<br>",$rs["descripcion"]);
+	
+}
+
+?>
+
 <!doctype html><html>
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1"/>
@@ -40,8 +50,10 @@
 	              <td width="450" height="400" valign="top" class="text5"><form name="form1" method="post" action="contacto.php">
 	                <table width="100%" border="0" cellspacing="0" cellpadding="0">
 	                  <tr>
-	                    <td width="248" height="20" align="left" class="productos"><h2 class="texto_contenido">Su consulta fue enviada exitosamente </h2>
-	                      <p>pronto nos pondremos en contacto con usted</p></td>
+	                    <td width="248" height="20" align="left" valign="top" class="productos"><?php echo $descripcion; ?></p>
+	                      <p>&nbsp;</p>
+	                      <p>&nbsp;</p>
+	                      <p><a href="contacto.php" class="texto_contenido">volver</a></p></td>
 	                    </tr>
 	                  </table>
 	                </form></td>

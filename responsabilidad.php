@@ -1,3 +1,15 @@
+<?php include("Conexion.php"); 
+$listado = "select * from  destacados";
+$sentencia = mysql_query($listado,$conn);
+while($rs=mysql_fetch_array($sentencia,$mibase)){
+	$destacado1 = str_replace("\r\n","<br>",$rs["destacado1"]);
+	$contenido1 = str_replace("\r\n","<br>",$rs["contenido1"]);
+	$destacado2 = str_replace("\r\n","<br>",$rs["destacado2"]);
+	$contenido2 = str_replace("\r\n","<br>",$rs["contenido2"]);	
+}
+
+?>
+
 <!doctype html><html>
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1"/>
@@ -49,13 +61,28 @@
               </table></td>
 	          <td width="30%" valign="top" class="texto_contenido"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 	            <tr>
-	              <td height="35" valign="top"><h1>Links de Interes</h1></td>
+	              <td height="35" valign="top"><h1>Links de Inter&eacute;s</h1></td>
 	              </tr>
 	            <tr>
-	              <td valign="top" class="texto_contenido"><p>www.ingenieriavyg.cl</p>
-	                <p>www.loremipsum.cl</p>
-	                <p>www.simplyisdummy.cl</p></td>
-	              </tr>
+	              <td valign="top" class="texto_contenido">
+                  
+                  
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                    <?php
+		$listado = "select * from responsabilidad  ";
+			$sentencia = mysql_query($listado,$conn);
+			while($rs=mysql_fetch_array($sentencia,$mibase)){
+		?> 
+                      <tr>
+                        <td><?php echo str_replace("\r\n","<br>",$rs["links"]) ?></td>
+                      </tr>
+                      <?php }?>
+                    </table> 
+                    
+                    
+                    </td>
+                    
+               </tr>
               </table></td>
             </tr>
           </table></td>
@@ -74,12 +101,10 @@
 	        <tr>
 	          <td width="50%" height="91" valign="top"><table width="90%" border="0" cellspacing="0" cellpadding="0">
 	            <tr>
-	              <td height="35" valign="top"><h2>Servicios</h2></td>
+	              <td height="35" valign="top"><h2><?php echo $destacado1; ?></h2></td>
 	              </tr>
 	            <tr>
-	              <td valign="top" class="texto_contenido2">is simply dummy text of the printing and typesetting industry.<br>
-	                Lorem Ipsum has been the industry's standard dummy text <br>
-	                ever since the 1500s</td>
+	              <td valign="top" class="texto_contenido2"><?php echo $contenido1; ?></td>
 	              </tr>
 	            <tr>
 	              <td height="29" valign="bottom"><table width="20%" border="0" cellspacing="0" cellpadding="0">
@@ -88,15 +113,13 @@
 	                  </tr>
 	                </table></td>
 	              </tr>
-              </table></td>
+	            </table></td>
 	          <td width="50%" valign="top"><table width="90%" border="0" cellspacing="0" cellpadding="0">
 	            <tr>
-	              <td height="35" valign="top"><h2>Productos</h2></td>
+	              <td height="35" valign="top"><h2><?php echo $destacado2; ?></h2></td>
 	              </tr>
 	            <tr>
-	              <td valign="top" class="texto_contenido2">is simply dummy text of the printing and typesetting industry.<br>
-	                Lorem Ipsum has been the industry's standard dummy text <br>
-	                ever since the 1500s</td>
+	              <td valign="top" class="texto_contenido2"><?php echo $contenido2; ?></td>
 	              </tr>
 	            <tr>
 	              <td height="29" valign="bottom"><table width="20%" border="0" cellspacing="0" cellpadding="0">
@@ -105,7 +128,7 @@
 	                  </tr>
 	                </table></td>
 	              </tr>
-              </table></td>
+	            </table></td>
             </tr>
           </table></td>
         </tr>

@@ -1,3 +1,4 @@
+<?php include("Conexion.php"); ?>
 <!doctype html><html>
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1"/>
@@ -28,80 +29,13 @@
 </header>
 <div id="section"> 
 	<div id="contenido_section">
-	  <table width="950" border="0" cellspacing="0" cellpadding="0">
-	    <tr>
-	      <td height="55">&nbsp;</td>
-        </tr>
-	    <tr>
-	      <td height="18" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
-	        <tr>
-	          <td width="50%" height="80" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
-	            <tr>
-	              <td height="84" valign="top"><img src="imagenes/proyectos/1.jpg" width="418" height="114"></td>
-	              <td>&nbsp;</td>
-	              <td bgcolor="#E7301D">&nbsp;</td>
-	              <td>&nbsp;</td>
-	              </tr>
-	            <tr>
-	              <td width="88%" height="84" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
-	                <tr>
-	                  <td>&nbsp;</td>
-	                  </tr>
-	                <tr>
-	                  <td height="35" valign="top"><h1>Proyecto 1 </h1></td>
-	                  </tr>
-	                <tr>
-	                  <td valign="top" class="texto_contenido"><strong>Lorem Ipsum</strong>&nbsp;es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno est&aacute;ndar de las industrias desde el a&ntilde;o 1500,</td>
-	                  </tr>
-	                <tr>
-	                  <td height="32" valign="bottom" class="texto_contenido"><table width="27%" border="0" cellspacing="0" cellpadding="0">
-	                    <tr>
-	                      <td align="center" valign="middle" bgcolor="#E7301D" class="texto_contenido">ver proyecto</td>
-	                      </tr>
-	                    </table></td>
-	                  </tr>
-	                </table></td>
-	              <td width="7%">&nbsp;</td>
-	              <td width="1%">&nbsp;</td>
-	              <td width="4%">&nbsp;</td>
-	              </tr>
-              </table></td>
-	          <td width="50%" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
-	            <tr>
-	              <td height="84" valign="top"><img src="imagenes/proyectos/2.jpg" width="418" height="114"></td>
-	              <td>&nbsp;</td>
-	              <td bgcolor="#E7301D">&nbsp;</td>
-	              <td>&nbsp;</td>
-	              </tr>
-	            <tr>
-	              <td width="88%" height="84" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
-	                <tr>
-	                  <td>&nbsp;</td>
-	                  </tr>
-	                <tr>
-	                  <td height="35" valign="top"><h1>Proyecto 2 </h1></td>
-	                  </tr>
-	                <tr>
-	                  <td valign="top" class="texto_contenido"><strong>Lorem Ipsum</strong>&nbsp;es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno est&aacute;ndar de las industrias desde el a&ntilde;o 1500,</td>
-	                  </tr>
-	                <tr>
-	                  <td height="32" valign="bottom" class="texto_contenido"><table width="27%" border="0" cellspacing="0" cellpadding="0">
-	                    <tr>
-	                      <td align="center" valign="middle" bgcolor="#E7301D" class="texto_contenido">ver proyecto</td>
-	                      </tr>
-	                    </table></td>
-	                  </tr>
-	                </table></td>
-	              <td width="7%">&nbsp;</td>
-	              <td width="1%">&nbsp;</td>
-	              <td width="4%">&nbsp;</td>
-	              </tr>
-              </table></td>
-            </tr>
-          </table></td>
-        </tr>
-      </table>
+	  
       <table width="950" border="0" cellspacing="0" cellpadding="0">
+            <?php
+		$listado = "select * from proyectos  ";
+			$sentencia = mysql_query($listado,$conn);
+			while($rs=mysql_fetch_array($sentencia,$mibase)){
+		?> 
 	    <tr>
 	      <td height="55">&nbsp;</td>
         </tr>
@@ -110,7 +44,7 @@
 	        <tr>
 	          <td width="50%" height="80" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 	            <tr>
-	              <td height="84" valign="top"><img src="imagenes/proyectos/3.jpg" width="418" height="114"></td>
+	              <td height="84" valign="top"><img src="imagenes/proyectos/<?php echo $rs["id"]; ?>.jpg" width="418" height="114" /></td>
 	              <td>&nbsp;</td>
 	              <td bgcolor="#E7301D">&nbsp;</td>
 	              <td>&nbsp;</td>
@@ -121,14 +55,14 @@
 	                  <td>&nbsp;</td>
 	                  </tr>
 	                <tr>
-	                  <td height="35" valign="top"><h1>Proyecto 3</h1></td>
+	                  <td height="35" valign="top"><h1><?php echo str_replace("\r\n","<br>",$rs["titulo"]) ?></h1></td>
 	                  </tr>
 	                <tr>
-	                  <td valign="top" class="texto_contenido"><p><strong>Lorem Ipsum</strong>&nbsp;es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno est&aacute;ndar de las industrias desde el a&ntilde;o 1500,</p>
-	                    <p>&nbsp;</p></td>
+	                  <td valign="top" class="texto_contenido"><?php echo str_replace("\r\n","<br>",$rs["descripcion"]) ?></td>
 	                  </tr>
 	                <tr>
-	                  <td height="32" valign="bottom" class="texto_contenido"><table width="27%" border="0" cellspacing="0" cellpadding="0">
+	                  <td height="33" valign="middle" class="texto_contenido"><p>&nbsp;</p>
+	                    <table width="27%" border="0" cellspacing="0" cellpadding="0">
 	                    <tr>
 	                      <td align="center" valign="middle" bgcolor="#E7301D" class="texto_contenido">ver proyecto</td>
 	                      </tr>
@@ -141,9 +75,10 @@
 	              <td width="4%">&nbsp;</td>
 	              </tr>
               </table></td>
+              <?php if($rs=mysql_fetch_array($sentencia,$mibase)){ ?>
 	          <td width="50%" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 	            <tr>
-	              <td height="84" valign="top"><img src="imagenes/proyectos/4.jpg" width="418" height="114"></td>
+	              <td height="84" valign="top"><img src="imagenes/proyectos/<?php echo $rs["id"]; ?>.jpg" width="418" height="114" /></td>
 	              <td>&nbsp;</td>
 	              <td bgcolor="#E7301D">&nbsp;</td>
 	              <td>&nbsp;</td>
@@ -154,17 +89,19 @@
 	                  <td>&nbsp;</td>
 	                  </tr>
 	                <tr>
-	                  <td height="35" valign="top"><h1>Proyecto 4 </h1></td>
+	                  <td height="35" valign="top"><h1><?php echo str_replace("\r\n","<br>",$rs["titulo"]) ?></h1></td>
 	                  </tr>
 	                <tr>
-	                  <td valign="top" class="texto_contenido"><p><strong>Lorem Ipsum</strong>&nbsp;es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno est&aacute;ndar de las industrias desde el a&ntilde;o 1500,</p></td>
+	                  <td valign="top" class="texto_contenido"><?php echo str_replace("\r\n","<br>",$rs["descripcion"]) ?></td>
 	                  </tr>
 	                <tr>
-	                  <td height="32" valign="bottom" class="texto_contenido"><table width="27%" border="0" cellspacing="0" cellpadding="0">
-	                    <tr>
-	                      <td align="center" valign="middle" bgcolor="#E7301D" class="texto_contenido">ver proyecto</td>
-	                      </tr>
-	                    </table></td>
+	                  <td height="33" valign="middle" class="texto_contenido"><p>&nbsp;</p>
+	                    <table width="27%" border="0" cellspacing="0" cellpadding="0">
+	                      <tr>
+	                        <td align="center" valign="middle" bgcolor="#E7301D" class="texto_contenido">ver proyecto</td>
+	                        </tr>
+	                      </table>
+	                    <p>&nbsp;</p></td>
 	                  </tr>
 	                </table></td>
 	              <td width="7%">&nbsp;</td>
@@ -175,7 +112,10 @@
             </tr>
           </table></td>
         </tr>
+         <?php }}?>
       </table>
+      
+      
 	</div>
 </div>
 <footer> 
