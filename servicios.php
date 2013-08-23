@@ -40,19 +40,24 @@ while($rs=mysql_fetch_array($sentencia,$mibase)){
 <div id="section"> 
 	<div id="contenido_section">
     
-    
-	  <table width="950" border="0" cellspacing="0" cellpadding="0">
+    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td height="35">&nbsp;</td>
+      </tr>
+    </table>
+<table width="950" border="0" cellspacing="0" cellpadding="0">
             
-        <tr>
-	          <td height="55">&nbsp;</td>
-        </tr>
-        <tr>
-	      <td><table width="950" border="0" cellspacing="0" cellpadding="0">
+        
+        
+      <tr>
+	      <td>
+          
+          <table width="950" border="0" cellspacing="0" cellpadding="0">
 	        <?php
 		$listado = "select * from servicios  ";
 			$sentencia = mysql_query($listado,$conn);
 			while($rs=mysql_fetch_array($sentencia,$mibase)){?> <tr>
-	          <td width="475" valign="top"><table width="475" border="0" cellspacing="0" cellpadding="0">
+	          <td width="475" valign="top"><table width="97%" border="0" cellspacing="0" cellpadding="0">
 	            <tr>
 	              <td height="84" valign="top"><img src="imagenes/servicios/<?php echo $rs["id"]; ?>.jpg" width="418" height="114" /></td>
 	              <td width="27">&nbsp;</td>
@@ -77,7 +82,7 @@ while($rs=mysql_fetch_array($sentencia,$mibase)){
 	              </tr>
               </table></td>
              <?php if($rs=mysql_fetch_array($sentencia,$mibase)){ ?>
-	          <td width="475" valign="top"><table width="475" border="0" cellspacing="0" cellpadding="0">
+	          <td width="475" valign="top"><table width="97%" border="0" cellspacing="0" cellpadding="0">
 	            <tr>
 	              <td height="84" valign="top"><img src="imagenes/servicios/<?php echo $rs["id"]; ?>.jpg" width="418" height="114" /></td>
 	              <td width="27">&nbsp;</td>
@@ -102,9 +107,12 @@ while($rs=mysql_fetch_array($sentencia,$mibase)){
 	              </tr>
               </table></td>
             </tr>
-          </table></td>
+            <?php }}?>
+          </table>
+          
+          </td>
         </tr>
-	    <?php }}?>
+	    
       </table>
       
       
