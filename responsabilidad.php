@@ -74,7 +74,7 @@ while($rs=mysql_fetch_array($sentencia,$mibase)){
 			while($rs=mysql_fetch_array($sentencia,$mibase)){
 		?> 
                       <tr>
-                        <td><?php echo str_replace("\r\n","<br>",$rs["links"]) ?></td>
+                        <td><a  target="new" href="http://<?php echo str_replace("\r\n","<br>",$rs["links"]) ?>" class="texto_contenido"> <?php echo str_replace("\r\n","<br>",$rs["links"]) ?></a></td>
                       </tr>
                       <?php }?>
                     </table> 
