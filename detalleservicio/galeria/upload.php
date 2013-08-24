@@ -8,7 +8,7 @@ if (!((strpos($tipo_archivo, "png") || strpos($tipo_archivo, "jpeg")) )) {
 }else{ 
     if (move_uploaded_file($HTTP_POST_FILES['userfile']['tmp_name'], $nombre_archivo)){ 
  		echo "<div align=center>El archivo ha sido cargado correctamente.</div>"; 
-	   	echo "<div align=center><a href=../../admin/galeria_servicios.php?id=$_GET[id]&servicio=$_GET[servicio]>VOLVER</a></div>";
+	   	echo "<div align=center><a href=../../admin/galeria_proyectos.php?id=$_GET[id]&servicio=$_GET[servicio]>VOLVER</a></div>";
     }else{ 
        echo "Ocurrió algún error al subir el fichero. No pudo guardarse."; 
     } 

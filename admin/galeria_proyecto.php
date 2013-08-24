@@ -3,7 +3,7 @@ session_start();
 include("../Conexion.php");
 if ($_POST["Grabar"]){
 	$insertar="INSERT INTO galeria_proyecto (titulo,url,Tipo,servicio) 
-		VALUES('$_POST[titulo]','$_POST[url]','$_POST[Tipo]','$_GET[servicios]')";
+		VALUES('$_POST[titulo]','$_POST[url]','$_POST[Tipo]','$_GET[proyectos]')";
 		$sentencia=mysql_query($insertar,$conn)or die("Error al grabar un nuevo link: ".mysql_error);
 
 }
@@ -30,7 +30,7 @@ if ($_GET["fun"] =="eli"){
 </head>
 
 <body>
-<form id="form1" name="form1" method="post" action="galeria_proyecto.php?servicios=<?php echo $_GET["servicios"]; ?>">
+<form id="form1" name="form1" method="post" action="galeria_proyecto.php?servicios=<?php echo $_GET["proyectos"]; ?>">
   <table width="50%" border="1" align="center" cellpadding="0" cellspacing="1">
     <tr>
       <td><table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
@@ -76,7 +76,7 @@ if ($_GET["fun"] =="eli"){
 <p align="center">&nbsp;</p>
 <table width="100%" border="0" cellspacing="0" cellpadding="0">
   <?php 
-$listado = "select * from  galeria_proyecto where servicio = '$_GET[servicios]' ";
+$listado = "select * from  galeria_proyecto where servicio = '$_GET[proyectos]' ";
 $sentencia = mysql_query($listado,$conn);
 while($rs=mysql_fetch_array($sentencia,$mibase)){
 ?>

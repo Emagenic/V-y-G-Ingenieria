@@ -186,7 +186,7 @@ while($rs=mysql_fetch_array($sentencia,$mibase)){
                       <td colspan="2" align="center" valign="top" class="Letras1">&nbsp;</td>
                     </tr>
                     <tr>
-                      <td height="23" colspan="2" align="center" valign="middle" bgcolor="#CCCCCC"><p class="texto_contenido2"><a href="galeria_proyectos.php?servicios=<?php echo $rs["id"] ?>" class="texto_contenido2">Editar Galeria de Fotos</a></p></td>
+                      <td height="23" colspan="2" align="center" valign="middle" bgcolor="#CCCCCC"><p class="texto_contenido2"><a href="galeria_proyecto.php?servicios=<?php echo $rs["id"] ?>" class="texto_contenido2">Editar Galeria de Fotos</a></p></td>
                     </tr>
                   </table></td>
                 </tr>
