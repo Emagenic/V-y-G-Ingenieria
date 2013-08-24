@@ -88,22 +88,20 @@ footer {
 	margin-left: auto;
 }
 #twitter {
-	background-image: url(../imagenes/twitter.png);
 	width: 33px;
 	height: 32px;
 	float: left;
 }
 #twitter:hover {
-	background-image: url(../imagenes/twitter_on.png);
 	width: 33px;
 	height: 32px;
 	float: left;
+	background-image: url(../imagenes/twitter_on.png);
 }
 #facebook {
-	background-image:url(../imagenes/facebook.png);
-	width:33px;
-	height:32px;
-	float:right
+	width: 33px;
+	height: 32px;
+	float: right
 }
 #facebook:hover {
 	background-image:url(../imagenes/facebook_on.png);

@@ -123,15 +123,15 @@
       
 	</div>
 </div>
-<footer> 
-	<div id="footer">
-   	  <div id="redes_sociales"> 
-        	<div id="twitter"></div>
-            <div id="facebook"></div>
-      </div>
-      		<div class="texto_pie" id="pie">todos los derechos reservados a ingenieriavyg -  contacto@ingenieriavyg.cl<br>
-sitio web desarrollado por emagenic.cl</div>
-	  </div>
+<footer>
+  <div id="footer">
+    <div id="redes_sociales">
+      <div id="twitter"><a href="https://twitter.com/ingenieriavyg" target="new"><img src="imagenes/twitter.png" width="33" height="32"></a></div>
+      <div id="facebook"><a href="https://www.facebook.com/ingenieria.vyg" target="new"><img src="imagenes/facebook.png" width="33" height="32"></a></div>
+    </div>
+    <div class="texto_pie" id="pie">todos los derechos reservados a ingenieriavyg -  contacto@ingenieriavyg.cl<br>
+      sitio web desarrollado por emagenic.cl</div>
+  </div>
 </footer>
 </body>
 </html>

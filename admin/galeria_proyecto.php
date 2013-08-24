@@ -8,7 +8,7 @@ if ($_POST["Grabar"]){
 
 }
 if ($_GET["fun"] =="eli"){
-	$insertar = "delete from proyecto WHERE id = '".$_GET["foto"]."' " ; 
+	$insertar = "delete from galeria_proyecto WHERE id = '".$_GET["foto"]."' " ; 
 	$sentencia=mysql_query($insertar,$conn)or die("Error al grabar un mensaje: ".mysql_error);
 	$dir="../detalleservicio/galeria/". $_GET["foto"] .".jpg";
 	if(file_exists($dir)) { 
