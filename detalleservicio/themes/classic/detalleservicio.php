@@ -2,7 +2,7 @@
  $listado = "select * from proyectos where id = '$_GET[id]' ";
 	$sentencia = mysql_query($listado,$conn);
 	if($rs=mysql_fetch_array($sentencia,$mibase)){
-		$idservicio= $rs["id"];
+		$idproyectos= $rs["id"];
 		$titulo = str_replace("\r\n","<br>",$rs["titulo"]); 
 		$completa = str_replace("\r\n","<br>",$rs["completa"]); 
 	
@@ -17,9 +17,51 @@
 <link rel="stylesheet" type="text/css" href="../../../css/estilos.css"/>
 <link href="../../../font/stylesheet.css" rel="stylesheet" type="text/css">
 <link rel="shortcut icon" href="../../../imagenes/icon.png">
+
+<style>
+
+            /* Demo styles */
+    html,body{}
+    .content{
+	width: 800px;
+	font-family: "helvetica neue", arial, sans-serif;
+	font-size: 12px;
+	line-height: 1.4;
+	
+	
+}
+
+    p{margin:0 0 20px}
+    .cred{margin-top:20px;font-size:11px;}
+
+            /* This rule is read by Galleria to define the gallery height: */
+    #galleria{
+	height: 500px;
+	background-color: #000000;
+}
+        body {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+}
+        #detallecontenido {
+	background-color: #000;
+	background-image: url(../../../imagenes/bg.png);
+	background-repeat: no-repeat;
+}
+        </style>
+        <link href="../../../css/estilos.css" rel="stylesheet" type="text/css">
+        <style type="text/css">
+        .texto1 {	font-family: Arial, Helvetica, sans-serif;
+	color: #FFF;
+	text-decoration: none;
+	font-size: 12px;
+}
+        </style>
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js"></script>
-<script type="text/javascript" src="../../../js/script3.js"></script>
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
+<script type="text/javascript" src="js/script3.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
 
         <!-- load Galleria -->
     <script src="../../galleria-1.2.8.min.js"></script>
@@ -56,25 +98,24 @@
         
         
       <tr>
-	      <td> 
+	      <td height="540"> 
               <div class="content"><!-- Adding gallery images. We use resized thumbnails here for better performance, but it’s not necessary -->
 
         <div class="content" id="galleria">
   <?php 
-$listado = "select * from  galeria_servicio where servicio = '$idservicio'";
+$listado = "select * from  galeria_proyecto  where proyectos = '$_GET[id]'";
 $sentencia = mysql_query($listado,$conn);
 while($rs=mysql_fetch_array($sentencia,$mibase)){
 	if ($rs["Tipo"]=="imagen"){
 ?>
 		<a href="../../galeria/<?php echo $rs["id"]; ?>.jpg">
-        <img data-title="" data-description="Kangoo Fitness" src="../../galeria/<?php echo $rs["id"]; ?>.jpg">
+        <img data-title="" data-description="Galeria Multimedia" src="../../galeria/<?php echo $rs["id"]; ?>.jpg">
         </a>
 <?php } else { ?>
          <a href="<?php echo $rs["url"]; ?>">
          <img data-title=""
          src="../../galeria/<?php echo $rs["id"]; ?>.jpg">
-<?php }} ?>           
-        </div>
+<?php }} ?></div>
 
         <p class="cred"></p>
     </div>
@@ -89,13 +130,22 @@ while($rs=mysql_fetch_array($sentencia,$mibase)){
     </script>
           
           </td>
-        </tr>
+      </tr>
 	    
       </table>
       
-      
-      
-	</div>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td height="35" valign="top"><h1><?php echo $titulo; ?></h1></td>
+        </tr>
+        <tr>
+          <td height="70" valign="top" class="texto_contenido"><?php echo $completa; ?></td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+        </tr>
+      </table>
+    </div>
 </div>
 <footer> 
 	<div id="footer">

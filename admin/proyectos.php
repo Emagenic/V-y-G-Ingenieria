@@ -109,8 +109,8 @@ body,td,th {
     <?php 
 if ($_POST["Grabar"]){
 	
-		$insertar="INSERT INTO proyectos (titulo,descripcion ) ";
-		$insertar.= "VALUES( '$_POST[titulo]','$_POST[descripcion]' )";
+		$insertar="INSERT INTO proyectos (titulo,descripcion,completa ) ";
+		$insertar.= "VALUES( '$_POST[titulo]','$_POST[descripcion]','$_POST[completa]' )";
 		$sentencia=mysql_query($insertar,$conn)or die("Error al grabar: ".mysql_error);	
 }
 
@@ -130,9 +130,15 @@ if ($_POST["Grabar"]){
         <input name="titulo" type="text" class="borde" id="titulo"></td>
     </tr>
     <tr>
-      <td height="91" align="right" valign="top" class="texto_info"><span class="texto_contenido2">Descripci&oacute;n</span><strong> &nbsp;</strong></td>
-      <td><span class="textobox">
+      <td height="98" align="right" valign="top" class="texto_info"><span class="texto_contenido2">Descripci&oacute;n</span><strong> &nbsp;</strong></td>
+      <td valign="top"><span class="textobox">
         <textarea name="descripcion" cols="45" rows="5" class="borde" id="descripcion"></textarea>
+      </span></td>
+    </tr>
+    <tr>
+      <td height="91" align="right" valign="top" class="texto_info"><span class="texto_contenido2">Descripci&oacute;n Completa</span><strong> &nbsp;</strong></td>
+      <td><span class="textobox">
+        <textarea name="completa" cols="45" rows="5" class="borde" id="completa"></textarea>
       </span></td>
     </tr>
     <tr>
@@ -176,8 +182,11 @@ while($rs=mysql_fetch_array($sentencia,$mibase)){
                     </tr>
                     <tr>
                       <td height="107" align="right" valign="top" class="Letras1"><div align="right" class="texto_info"><span class="texto_contenido2">Descripci&oacute;n</span> &nbsp; </div></td>
-                      <td valign="top" class="texto">
-                      <?php $texto = str_replace("\r\n","<br>",$rs["descripcion"]); echo $texto ?></td>
+                      <td valign="top" class="texto"><?php $texto = str_replace("\r\n","<br>",$rs["descripcion"]); echo $texto ?></td>
+                    </tr>
+                    <tr>
+                      <td height="107" align="right" valign="top" class="Letras1"><div align="right" class="texto_info"><span class="texto_contenido2">Descripci&oacute;n &nbsp; Completa</span> &nbsp; </div></td>
+                      <td valign="top" class="texto"><?php $texto = str_replace("\r\n","<br>",$rs["completa"]); echo $texto ?></td>
                     </tr>
                     <tr>
                       <td colspan="2" align="center" valign="top" class="Letras1"><p><a href="../imagenes/proyectos/Upload_foto.php?id=<?php echo $rs["id"]; ?>" class="texto_contenido2">Cambiar foto </a></p>                        <img src="../imagenes/proyectos/<?php echo $rs["id"]; ?>.jpg" width="418" height="114"></td>
@@ -186,7 +195,7 @@ while($rs=mysql_fetch_array($sentencia,$mibase)){
                       <td colspan="2" align="center" valign="top" class="Letras1">&nbsp;</td>
                     </tr>
                     <tr>
-                      <td height="23" colspan="2" align="center" valign="middle" bgcolor="#CCCCCC"><p class="texto_contenido2"><a href="galeria_proyecto.php?servicios=<?php echo $rs["id"] ?>" class="texto_contenido2">Editar Galeria de Fotos</a></p></td>
+                      <td height="23" colspan="2" align="center" valign="middle" bgcolor="#CCCCCC"><p class="texto_contenido2"><a href="galeria_proyecto.php?proyectos=<?php echo $rs["id"] ?>" class="texto_contenido2">Editar Galeria de Fotos</a></p></td>
                     </tr>
                   </table></td>
                 </tr>

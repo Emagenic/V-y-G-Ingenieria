@@ -92,25 +92,25 @@ body,td,th {
         <td height="18" colspan="2" valign="top" class="Letras1">&nbsp;</td>
       </tr>
       <tr>
-        <td width="19%" height="30" valign="top" class="Letras1"><div align="right" class="subtitulodestacado2"><span class="texto_contenido2">Destacado 1</span><span class="texto">&nbsp;&nbsp;</span></div></td>
+        <td width="19%" height="30" valign="top" class="Letras1"><div align="right" class="subtitulodestacado2"><span class="texto_contenido2">Titulo (Direccionado a servicios)</span><span class="texto">&nbsp;&nbsp;</span></div></td>
         <td width="31%" valign="top"><label>
           <input name="destacado1" type="text" class="borde" id="destacado1" value="<?php echo $destacado1; ?> " size="50">
         </label></td>
       </tr>
       <tr>
-        <td height="135" valign="top" class="Letras1"><div align="right" class="subtitulodestacado2"><span class="texto_contenido2">Contenido 1</span><span class="texto">&nbsp;&nbsp;</span></div></td>
+        <td height="135" valign="top" class="Letras1"><div align="right" class="subtitulodestacado2"><span class="texto_contenido2">Contenido (Direccionado a servicios) </span><span class="texto">&nbsp;&nbsp;</span></div></td>
         <td valign="top"><label>
           <textarea name="contenido1" cols="50" rows="8" class="borde" id="contenido1"><?php echo $contenido1; ?></textarea>
         </label></td>
       </tr>
       <tr>
-        <td height="30" valign="top" class="Letras1"><div align="right" class="subtitulodestacado2"><span class="texto_contenido2">Destacado 2</span><span class="texto">&nbsp;&nbsp;</span></div></td>
+        <td height="30" valign="top" class="Letras1"><div align="right" class="subtitulodestacado2"><span class="texto_contenido2">Titulo (Direccionado a proyectos)</span><span class="texto">&nbsp;&nbsp;</span></div></td>
         <td valign="top"><label>
           <input name="destacado2" type="text" class="borde" id="titulo3" value="<?php echo $destacado2; ?> " size="50">
         </label></td>
       </tr>
       <tr>
-        <td height="135" valign="top" class="Letras1"><div align="right" class="subtitulodestacado2"><span class="texto_contenido2">Contenido 2</span><span class="texto">&nbsp;&nbsp;</span></div></td>
+        <td height="135" valign="top" class="Letras1"><div align="right" class="subtitulodestacado2"><span class="texto_contenido2">Contenido (Direccionado a proyectos) </span><span class="texto">&nbsp;&nbsp;</span></div></td>
         <td valign="top"><label>
           <textarea name="contenido2" cols="50" rows="8" class="borde" id="descripcion3"><?php echo $contenido2; ?> </textarea>
         </label></td>

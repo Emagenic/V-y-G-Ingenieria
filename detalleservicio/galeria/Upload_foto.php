@@ -6,7 +6,7 @@
 
 <body>
 <?php 
-echo "<form action=upload.php?servicio=$_GET[servicio]&id=$_GET[id]&cadenatexto=$_GET[foto] method=post enctype=multipart/form-data> "
+echo "<form action=upload.php?proyectos=$_GET[proyectos]&id=$_GET[id]&cadenatexto=$_GET[foto] method=post enctype=multipart/form-data> "
 ?><br>
     <input type="hidden" name="MAX_FILE_SIZE" value="10000000"> 
     <br> 

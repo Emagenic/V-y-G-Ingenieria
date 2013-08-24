@@ -138,7 +138,7 @@ while($rs=mysql_fetch_array($sentencia,$mibase)){
 	            <tr>
 	              <td height="29" valign="bottom"><table width="20%" border="0" cellspacing="0" cellpadding="0">
 	                <tr>
-	                  <td align="center" valign="middle" bgcolor="#E7301D" class="texto_contenido">ver mas</td>
+	                  <td align="center" valign="middle" bgcolor="#E7301D" class="texto_contenido"><a href="servicios.php" class="texto_contenido">ver mas</a></td>
 	                  </tr>
 	                </table></td>
 	              </tr>
@@ -153,7 +153,7 @@ while($rs=mysql_fetch_array($sentencia,$mibase)){
 	            <tr>
 	              <td height="29" valign="bottom"><table width="20%" border="0" cellspacing="0" cellpadding="0">
 	                <tr>
-	                  <td align="center" valign="middle" bgcolor="#E7301D" class="texto_contenido">ver mas</td>
+	                  <td align="center" valign="middle" bgcolor="#E7301D" class="texto_contenido"><a href="proyectos.php" class="texto_contenido">ver mas</a></td>
 	                  </tr>
 	                </table></td>
 	              </tr>

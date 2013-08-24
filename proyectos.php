@@ -68,7 +68,7 @@
 	                    <p>&nbsp;</p>
 	                    <table width="27%" border="0" cellspacing="0" cellpadding="0">
 	                      <tr>
-	                        <td align="center" valign="middle" bgcolor="#E7301D" class="texto_contenido">ver proyecto</td>
+	                        <td align="center" valign="middle" bgcolor="#E7301D"><a href="detalleservicio/themes/classic/detalleservicio.php?id=<?php echo $rs["id"]; ?>" class="texto_contenido">ver proyecto</a></td>
 	                        </tr>
 	                      </table>
 	                    <p>&nbsp;</p>
@@ -100,7 +100,7 @@
 	                    <p>&nbsp;</p>
 	                    <table width="27%" border="0" cellspacing="0" cellpadding="0">
 	                      <tr>
-	                        <td align="center" valign="middle" bgcolor="#E7301D" class="texto_contenido">ver proyecto</td>
+	                        <td align="center" valign="middle" bgcolor="#E7301D"><a href="detalleservicio/themes/classic/detalleservicio.php?id=<?php echo $rs["id"]; ?>" class="texto_contenido">ver proyecto</a></td>
 	                        </tr>
 	                      </table>
 	                    <p>&nbsp;</p>
