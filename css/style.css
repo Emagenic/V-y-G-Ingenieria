@@ -18,16 +18,17 @@ body {
 
 /* HEADER */
 header { 
-	height:525px;
+	height:400px;
 }
 .headerimg {
 	background-position: center top;
 	background-repeat: no-repeat;
 	width: 100%;
-	height: 525px;
+	height: 400px;
 	position: absolute;
 	left: 0px;
 	top: 22px;
+	float: right
 }
 
 /* NAVIGATION */
@@ -186,11 +187,11 @@ header {
 /* HEADER HAVIGATION */
 #headernav-outer {
 	position: relative;
-	top: 390px;
+	top: 250px;
 	margin: 0 auto;
 	width: 950px;
-	height:53px;
-	background-image:url(../images/botonera.jpg)
+	height: 56px;
+	background-image: url(../images/botonera.jpg)
 }
 #linea_sup {
 	background-image:url(../images/line_sup.jpg);

@@ -50,7 +50,7 @@ while($rs=mysql_fetch_array($sentencia,$mibase)){
 	          <td width="70%" height="80" valign="top"><table width="99%" border="0" cellspacing="0" cellpadding="0">
 	            <tr>
 	              <td height="84" valign="top">
-	                <iframe width="640" height="360" src="//www.youtube.com/embed/mHJjrf-eXDY?rel=0" frameborder="0" allowfullscreen></iframe>
+	                <iframe width="640" height="360" src="//www.youtube.com/embed/DC6j9iTDDZk?rel=0"  frameborder="0" allowfullscreen></iframe>
 	                
 	                <p>&nbsp;
 	                  &nbsp;
