@@ -10,20 +10,26 @@ var photos = [ {
 		"firstline" : "Going on",
 		"secondline" : "vacation?"
 	}, {
-		"title" : "Office Appartments",
+		"title" : "Mountainbiking",
 		"image" : "3.jpg",
+		"url" : "http://www.sxc.hu/photo/1221065",
+		"firstline" : "Get out and be",
+		"secondline" : "active"
+	}, {
+		"title" : "Office Appartments",
+		"image" : "4.jpg",
 		"url" : "http://www.sxc.hu/photo/1265695",
 		"firstline" : "Or still busy at",
 		"secondline" : "work?"
 	}, {
 		"title" : "Mountainbiking",
-		"image" : "4.jpg",
+		"image" : "5.jpg",
 		"url" : "http://www.sxc.hu/photo/1221065",
 		"firstline" : "Get out and be",
 		"secondline" : "active"
 	}, {
 		"title" : "Mountains Landscape",
-		"image" : "5.jpg",
+		"image" : "6.jpg",
 		"url" : "http://www.sxc.hu/photo/1271915",
 		"firstline" : "Take a fresh breath of",
 		"secondline" : "nature"

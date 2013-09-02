@@ -10,8 +10,14 @@ var photos = [ {
 		"firstline" : "Going on",
 		"secondline" : "vacation?"
 	}, {
-		"title" : "Office Appartments",
+		"title" : "Mountainbiking",
 		"image" : "5.jpg",
+		"url" : "http://www.sxc.hu/photo/1221065",
+		"firstline" : "Get out and be",
+		"secondline" : "active"
+	}, {
+		"title" : "Office Appartments",
+		"image" : "6.jpg",
 		"url" : "http://www.sxc.hu/photo/1265695",
 		"firstline" : "Or still busy at",
 		"secondline" : "work?"

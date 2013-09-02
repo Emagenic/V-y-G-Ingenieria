@@ -33,6 +33,12 @@ var photos = [ {
 		"url" : "http://www.sxc.hu/photo/1271915",
 		"firstline" : "Take a fresh breath of",
 		"secondline" : "nature"
+	}, {
+		"title" : "Mountains Landscape",
+		"image" : "6.jpg",
+		"url" : "http://www.sxc.hu/photo/1271915",
+		"firstline" : "Take a fresh breath of",
+		"secondline" : "nature"
 	}
 ];
 
